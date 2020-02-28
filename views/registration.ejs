@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/login.css' />
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="form">
+       <form class="login-form" method="post" action="/submitRegistration">
+         <input name="name" type="text" placeholder="Name">
+         <input name="aadhaar" type="text" placeholder="AADHAR Number"/>
+         <input name="Constituency" type="text" placeholder="Constituency">
+         <input name="phone" type="text" placeholder="Phone Number">
+         <input name="password" type="password" placeholder="Password"/>
+         <input type="password" placeholder="Confirm Password">
+         <button value="submit">Register</button>
+      </form>
+     </div>
+   </div>
+  </body>
+</html>
