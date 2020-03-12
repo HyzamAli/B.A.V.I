@@ -12,10 +12,16 @@ router.post('/', function(req, res, next) {
   var dbConn = MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("BAVI");
-  console.log(req.body.aadhar);
+  // var database = db.db("BAVI");
+  console.log(req.body.aadhaar);
   // var no = req.body.aadhaar;
   // console.log(no);
-  if((dbo.collection('voterslist').find( { "aadhaar": '1234'} ).count()) > 0)
+  // console.log(dbo.collection("voterslist").find({ "name": "Hyzam Ali"}).count().limit(1));
+  var arr = [];
+  dbo.collection("voterslist").find().forEach(function(u) { arr.push(u.aadhaar) });
+  //console.log(dbo.collection("voterslist").find().pretty()); UNCOMMENT THIS LINE TO SEE GIBBERISH GETTING PRINTED
+  console.log(JSON.stringify(arr));
+  if(Array.isArray(req.body.aadhaar))
   {
   	console.log('Existing user');
   }
