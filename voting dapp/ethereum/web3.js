@@ -1,7 +1,7 @@
-import Web3 from 'web3';
-
+//import Web3 from 'web3';
+var Web3 = require("web3");
 let web3;
-
+/*
 if (typeof window !== 'undefined' && typeof window.web3 !== 'undefined') {
     // we are in the browser and metamask is running
     web3 = new Web3(window.web3.currentProvider);
@@ -13,5 +13,7 @@ else {
     );
     web3 = new Web3(provider);
 }
-
-export default web3;
+*/
+web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+//export default web3;
+module.exports = web3;

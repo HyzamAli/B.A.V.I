@@ -1,4 +1,4 @@
-var Coin = artifacts.require("./Coin.sol");
+var Campaign = artifacts.require("./Campaign.sol");
 module.exports = function(deployer) {   
-	deployer.deploy(Coin);
+	deployer.deploy(Campaign);
 };

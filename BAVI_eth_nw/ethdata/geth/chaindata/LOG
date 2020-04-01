@@ -70,3 +70,13 @@
 14:51:43.179393 db@janitor F·5 G·1
 14:51:43.179702 db@janitor removing table-11
 14:51:43.179838 db@open done T·1.27336448s
+=============== Apr 1, 2020 (IST) ===============
+20:20:40.583618 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+20:20:40.603508 version@stat F·[1 1] S·132KiB[82KiB 50KiB] Sc·[0.25 0.00]
+20:20:40.603590 db@open opening
+20:20:40.603797 journal@recovery F·1
+20:20:40.610383 journal@recovery recovering @16
+20:20:40.750163 memdb@flush created L0@18 N·1947 S·109KiB "H\x01\xe0..\x1c\x18\xc3,v4306":"sec..\xcb\xd2W,v4910"
+20:20:40.756219 version@stat F·[2 1] S·242KiB[191KiB 50KiB] Sc·[0.50 0.00]
+20:20:40.852013 db@janitor F·5 G·0
+20:20:40.852083 db@open done T·248.465795ms

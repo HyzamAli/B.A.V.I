@@ -1,7 +1,7 @@
-import web3 from './web3';
-import Campaign from './build/Campaign.json';
+var web3 = require("./web3");
+var Campaign = require("./build/Campaign.json");
 
-export default (address) => {
+module.exports = (address) => {
     return new web3.eth.Contract(
         JSON.parse(Campaign.interface),
         address

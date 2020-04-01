@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity >=0.4.17;
 
 /*
     Contract CampaignFactory to create new campaigns and
