@@ -22,3 +22,9 @@ miner.stop()
 eth.coinbase
 admin.nodeInfo.enode
 eth.coinbase
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+miner.start()
+miner.stop()
