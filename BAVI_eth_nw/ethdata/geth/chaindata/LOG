@@ -80,3 +80,33 @@
 20:20:40.756219 version@stat F·[2 1] S·242KiB[191KiB 50KiB] Sc·[0.50 0.00]
 20:20:40.852013 db@janitor F·5 G·0
 20:20:40.852083 db@open done T·248.465795ms
+=============== Apr 2, 2020 (IST) ===============
+13:06:54.254705 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:06:54.255088 version@stat F·[2 1] S·242KiB[191KiB 50KiB] Sc·[0.50 0.00]
+13:06:54.255155 db@open opening
+13:06:54.255309 journal@recovery F·1
+13:06:54.259270 journal@recovery recovering @19
+13:06:54.311955 memdb@flush created L0@21 N·1687 S·95KiB "H\x00\xc7..7\xa0G,v5252":"r\x00\x00..Ř|,v6594"
+13:06:54.318238 version@stat F·[3 1] S·337KiB[287KiB 50KiB] Sc·[0.75 0.00]
+13:06:54.414048 db@janitor F·6 G·0
+13:06:54.414121 db@open done T·158.937888ms
+13:46:01.681995 db@close closing
+13:46:01.682110 db@close done T·113.456µs
+=============== Apr 2, 2020 (IST) ===============
+13:46:06.961251 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:46:06.961549 version@stat F·[3 1] S·337KiB[287KiB 50KiB] Sc·[0.75 0.00]
+13:46:06.961853 db@open opening
+13:46:06.961992 journal@recovery F·1
+13:46:06.966016 journal@recovery recovering @22
+13:46:07.022376 memdb@flush created L0@24 N·2390 S·234KiB "\x04Ӡ..[\xf1\xcc,v8893":"\xfe\xbc\xac..\"%Z,v8968"
+13:46:07.029023 version@stat F·[4 1] S·572KiB[521KiB 50KiB] Sc·[1.00 0.00]
+13:46:07.113417 db@janitor F·7 G·0
+13:46:07.113486 db@open done T·151.602168ms
+13:46:07.113649 table@compaction L0·4 -> L1·1 S·572KiB Q·8990
+13:46:07.197666 table@build created L1@27 N·4911 S·385KiB "\x04Ӡ..[\xf1\xcc,v8893":"\xfe\xbc\xac..\"%Z,v8968"
+13:46:07.197829 version@stat F·[0 1] S·385KiB[0B 385KiB] Sc·[0.00 0.00]
+13:46:07.292602 table@compaction committed F-4 S-186KiB Ke·0 D·3618 T·178.862566ms
+13:46:07.293032 table@remove removed @21
+13:46:07.293593 table@remove removed @18
+13:46:07.293742 table@remove removed @15
+13:46:07.293825 table@remove removed @14

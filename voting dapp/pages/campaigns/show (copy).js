@@ -82,24 +82,14 @@ class CampaignShow extends Component {
                     <Grid.Row>
                         <Grid.Column width={10}>
                             {this.renderCards()}
-
-                            <Link route={`/campaigns/${this.props.address}/vote`}>
-                                <a>
-                                   <Button primary style={{ marginTop: '20px' }}>Vote Now</Button>
-                                </a>
-                            </Link>
-			    <Link route={`/campaigns/${this.props.address}/results`}>
+                            {this.props.complete ? '' : (
+                                <Link route={`/campaigns/${this.props.address}/vote`}>
                                     <a>
-                            		<Button primary style={{ marginTop: '20px' }}>Declare Result</Button>
-				    </a>
-			    </Link>
-                            /*{this.props.complete ? '' : (
-                                <Link route={`/campaigns/${this.props.address}/results`}>
-                                    <a>
-                            		<Button primary style={{ marginTop: '20px' }}>Declare Result</Button>
-				    </a>
-				</Link>
-			    )}*/
+                                        <Button primary style={{ marginTop: '20px' }}>Vote Now</Button>
+                                    </a>
+                                </Link>
+                            )}
+                            <Button primary onClick={event => this.onResult(event)} style={{ marginTop: '20px' }} value={this.props.complete ? 'View Results' : 'Declare Result'}>{this.props.complete ? 'View Results' : 'Declare Result'}</Button>
                         </Grid.Column>
                         <Grid.Column width={6}>
                         <Card fluid>

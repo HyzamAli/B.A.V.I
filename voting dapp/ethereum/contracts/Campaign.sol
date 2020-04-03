@@ -146,6 +146,13 @@ contract Campaign {
         );    
     }
 
+    
+    //complete campaign
+    function complete() public view returns(bool){
+	complete = true;
+	return complete;
+    }    
+
     // get total registered voters count
     function getVotersCount() public view returns(uint) {
         return voters.length;

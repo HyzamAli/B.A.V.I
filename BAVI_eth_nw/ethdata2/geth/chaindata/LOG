@@ -95,3 +95,21 @@
 14:52:10.584872 version@stat F·[3 1] S·75KiB[36KiB 38KiB] Sc·[0.75 0.00]
 14:52:10.904585 db@janitor F·6 G·0
 14:52:10.904663 db@open done T·562.159213ms
+=============== Apr 2, 2020 (IST) ===============
+15:33:00.450646 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:33:00.450952 version@stat F·[3 1] S·75KiB[36KiB 38KiB] Sc·[0.75 0.00]
+15:33:00.450998 db@open opening
+15:33:00.451091 journal@recovery F·1
+15:33:00.454151 journal@recovery recovering @21
+15:33:00.565713 memdb@flush created L0@23 N·2050 S·114KiB "H\x01\xe0..\x1c\x18\xc3,v3160":"sec..\xcb\xd2W,v3765"
+15:33:00.573580 version@stat F·[4 1] S·189KiB[150KiB 38KiB] Sc·[1.00 0.00]
+15:33:00.669846 db@janitor F·7 G·0
+15:33:00.669943 db@open done T·218.918052ms
+15:33:00.670165 table@compaction L0·4 -> L1·1 S·189KiB Q·3768
+15:33:00.803771 table@build created L1@26 N·2529 S·157KiB "%\xd1\xc6..\x91B\x81,v1175":"\xfd\xa9\r..7U\xaf,v119"
+15:33:00.804033 version@stat F·[0 1] S·157KiB[0B 157KiB] Sc·[0.00 0.00]
+15:33:00.870771 table@compaction committed F-4 S-31KiB Ke·0 D·901 T·200.487036ms
+15:33:00.871337 table@remove removed @20
+15:33:00.871474 table@remove removed @17
+15:33:00.871575 table@remove removed @5
+15:33:00.871678 table@remove removed @16

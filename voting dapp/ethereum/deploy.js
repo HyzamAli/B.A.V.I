@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const campaignFactory = require('../ethereum/build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-    '',
+    'password',
     'https://localhost:8545'
 );
 console.log('hi');
@@ -20,6 +20,8 @@ const deploy = async () => {
         .send({ from: accounts[0], gas: '3000000' });
 
     console.log('Contract deployed to: ', result.options.address);
+    console.log(result.options.address)
+    const address = result.options.address;
+    module.exports = address;
 }
-
 deploy();

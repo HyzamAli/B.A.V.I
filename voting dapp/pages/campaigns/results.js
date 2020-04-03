@@ -25,41 +25,51 @@ class CampaignResult extends Component {
             );
         }
 
-        console.log(candidates);
+        console.log('candidates',candidates);
 
         const isComplete = await campaign.methods.complete().call();
-
+	//console.log('compcheck:',isComplete);
         // if campaign is closed, get the result summary
         if(isComplete) {
+	    console.log('iscomplete');
             const summary = await campaign.methods.getResult().call();
             const winnerIndex = await campaign.methods.candidateIndex(summary[2]).call();
             const winner = await campaign.methods.candidates(parseInt(winnerIndex)).call();
-            console.log('winner', winner, winnerIndex, typeof winnerIndex);
+            //console.log('winner', winner, winnerIndex, typeof winnerIndex);
             console.log('summary', summary);
+	    return { 
+            candidates, 
+            candidatesCount,
+            votesPolled:summary[0],
+            votesReceived:summary[1],
+            winnerUid:summary[2],
+            winnerName:winner.fullName
+            };
         }
+	else{console.log('notcomplete');}
 
         return { 
             candidates, 
             candidatesCount,
-            votesPolled: typeof (summary) !== 'undefined' ? summary[0] : '-',
-            votesReceived: typeof (summary) !== 'undefined' ? summary[1] : '-',
-            winnerUid: typeof (summary) !== 'undefined' ? summary[2] : '-',
-            winnerName: typeof winner !== 'undefined' ? winner.fullName : '-'
+            votesPolled:summary[0],
+            votesReceived:summary[1],
+            winnerUid:summary[2],
+            winnerName:winner.fullName
          };
     }
 
     renderRows() {
         const { Row, Cell } = Table;
-        // let candidates = this.props.candidates.sort(this.sortVotes);
-        console.log(this.props.candidatesCount, this.props.candidates);
-        return this.props.candidates.map((voter, index) => {
+        let candidates = this.props.candidates.sort(this.sortVotes);
+        //console.log(this.props.candidatesCount, this.props.candidates);
+        return this.props.candidates.map((candidate, index) => {
             return (
                 <Row key={index}>
                     <Cell>{index + 1}</Cell>
-                    <Cell>{voter.uid}</Cell>
-                    <Cell>{voter.fullName}</Cell>
-                    <Cell>{voter.location}</Cell>
-                    <Cell>{voter.votes}</Cell>
+                    <Cell>{candidate.uid}</Cell>
+                    <Cell>{candidate.fullName}</Cell>
+                    <Cell>{candidate.location}</Cell>
+                    <Cell>{candidate.votes}</Cell>
                 </Row>
             );
         })
@@ -68,15 +78,15 @@ class CampaignResult extends Component {
     renderResultRows() {
         const { Row, Cell } = Table;
         const { votesPolled, votesReceived, winnerUid, winnerName } = this.props;
-        // let candidates = this.props.candidates.sort(this.sortVotes);
-        // console.log(candidates);
+	console.log('winner:',winnerName,winnerUid);
+        let candidates = this.props.candidates.sort(this.sortVotes);
             return (
                 <Row>
                     <Cell>{winnerUid}</Cell>
                     <Cell>{winnerName}</Cell>
                     <Cell>{votesReceived}</Cell>
                     <Cell>{votesPolled}</Cell>
-                    {/* <Cell>{votesReceived*100/votesPolled}%</Cell> */}
+                    <Cell>{votesReceived*100/votesPolled}%</Cell>
                 </Row>
             );
     }
@@ -95,7 +105,7 @@ class CampaignResult extends Component {
         const { Header, Row, HeaderCell, Body } = Table;
         return (
             <Layout>
-                <h3>Result Summary:</h3>
+                <h3>Winner Summary:</h3>
                 <Table>
                     <Header>
                         <Row>
@@ -103,7 +113,7 @@ class CampaignResult extends Component {
                             <HeaderCell>Full Name</HeaderCell>
                             <HeaderCell>Total Votes Received</HeaderCell>
                             <HeaderCell>Total Votes Polled</HeaderCell>
-                            {/* <HeaderCell>Percentage</HeaderCell> */}
+                            <HeaderCell>Percentage</HeaderCell>
                         </Row>
                     </Header>
                     <Body>
@@ -114,7 +124,7 @@ class CampaignResult extends Component {
                 <Table>
                     <Header>
                         <Row>
-                            <HeaderCell>Id</HeaderCell>
+                            <HeaderCell>Sl.No.</HeaderCell>
                             <HeaderCell>Unique Id</HeaderCell>
                             <HeaderCell>Full Name</HeaderCell>
                             <HeaderCell>Address</HeaderCell>
