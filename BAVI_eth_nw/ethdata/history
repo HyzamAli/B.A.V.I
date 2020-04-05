@@ -70,3 +70,12 @@ miner.stop()
 miner.start()
 miner.stop()
 miner.start()
+miner.stop()
+miner.start()
+miner.stop()
+admin.peers
+eth.coinbase
+miner.start()
+miner.stop()
+admin.addPeer("enode://6ecf8deafb0259d92f24a7100e6305b65ea078c7951651c5ffce0de7662aa130584e26e57b604ac5c1bee282388bb66b4a9f6eab28c6ff9f7596650f6e44794a@127.0.0.1:30306?discport=0")
+miner.stop()

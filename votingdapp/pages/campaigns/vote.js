@@ -75,6 +75,8 @@ class Vote extends Component {
             debugger;
             const campaign = Campaign(this.props.address);
             const accounts = await web3.eth.getAccounts();
+	    //console.log(accounts[0]);
+	    await web3.eth.personal.unlockAccount(accounts[0],'password');
             await campaign.methods.pollVote(
                 this.state.selectedVoter.uid, this.state.selectedCandidate.uid
             ).send( {
