@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var registrationRouter = require('./routes/registration');
 var registrationSubmitRouter = require('./routes/submitRegistration');
+var loginCheckRouter = require('./routes/loginCheck');
+var homeRoute = require('./routes/userHome');
+
 
 
 var app = express();
@@ -52,6 +55,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/registration', registrationRouter);
 app.use('/submitRegistration',registrationSubmitRouter);
+app.use('/loginCheck', loginCheckRouter);
+app.use('/userHome', homeRoute);
+
 
 
 // catch 404 and forward to error handler
