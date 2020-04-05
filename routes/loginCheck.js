@@ -13,15 +13,15 @@ router.post('/', function(req, res, next) {
   if (err) throw err;
   var dbo = db.db("BAVI");
 
-  dbo.collection('voterslist').find(getUserQuery).toArray(function(err, result) {
+  dbo.collection('voterslist').find(getUserQuery).toArray(function(err,result){
     if (err) throw err;
-    
+    console.log('result[0]:',result[0]);
     if(result[0]==null) {
       console.log('No user found');
     }else{
       console.log('User found');
 
-      if(password === result[0].password) {
+      if(password == result[0].password) {
         console.log('Correct password');
         res.render('userHome', {title: 'Registration'});
       }else {
