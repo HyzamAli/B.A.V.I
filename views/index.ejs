@@ -7,10 +7,10 @@
   <body>
     <div class="login-page">
       <div class="form">
-       <form class="login-form">
-         <input type="text" placeholder="AADHAR Number"/>
-         <input type="password" placeholder="Password"/>
-         <button>login</button>
+       <form class="login-form" method ="POST" action="/loginCheck">
+         <input type="text" name = "voterID" placeholder="VoterID Number"/>
+         <input type="password" name = "password" placeholder="Password"/>
+         <button value ="submit">login</button>
          <p class="message">Not registered? <a href="/registration">Create an account</a></p>
       </form>
      </div>
