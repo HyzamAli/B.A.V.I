@@ -3,9 +3,9 @@ var router = express.Router();
 
 router.post('/', function(req, res, next) {
 
-  const number = req.body.aadhaar;
+  const number = req.body.voterID;
   const password = req.body.password;
-  const getUserQuery = {aadhaar : number};
+  const getUserQuery = {voterID : number};
 
   var MongoClient = require('mongodb').MongoClient;
   var url = "mongodb://localhost:27018/";
