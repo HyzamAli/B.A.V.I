@@ -4,6 +4,8 @@ import { Router } from '../../routes';
 import Layout from '../../components/Layout';
 import Campaign from '../../ethereum/campaign';
 import web3 from '../../ethereum/web3';
+import Head from 'next/head';
+import Header from '../../components/Header2';
 
 class Vote extends Component {
     state = {
@@ -12,7 +14,7 @@ class Vote extends Component {
         loading: false,
         errorMessage: ''
     };
-
+    
     static async getInitialProps(props) {
         const campaign = Campaign(props.query.address);
         const voterIds = await campaign.methods.getVoterIds().call();
@@ -40,6 +42,9 @@ class Vote extends Component {
     }
 
     onSelectVoter = async (event, data) => {
+	const vid = this.props.location.search;
+	console.log('selected');
+	console.log('vid:',vid);
         event.preventDefault();
         console.log(data.value);
         const campaign = Campaign(this.props.address);
@@ -94,11 +99,12 @@ class Vote extends Component {
     render() {
         return (
             <Layout>
+		<Header />
                 <Grid centered>
                     <Grid.Column width={5}>
                         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
                             <Form.Field>
-                                <label>Select Voter Id</label>
+                               <label>Select Voter Id</label>
                                 <Dropdown placeholder='Search Voter' search selection options={this.props.voterList} onChange={this.onSelectVoter} />
                             </Form.Field>
                             {
@@ -107,15 +113,15 @@ class Vote extends Component {
                                         <Card fluid>
                                             <Card.Content>
                                                 <Image floated='right' size='mini' src='/static/images/steve.jpg' />
-                                                <Card.Header>{this.state.selectedVoter.fullName}</Card.Header>
+                                                <Card.Header>{'Athul'}</Card.Header>
                                                 <Card.Meta>{this.state.selectedVoter.uid}</Card.Meta>
                                                 <Card.Description>{this.state.selectedVoter.location}</Card.Description>
                                             </Card.Content>
-                                            {/* <Card.Content extra style={{ justifyContent: 'center' }}>
+                                            {<Card.Content extra style={{ justifyContent: 'center' }}>
                                                 <Button primary>
                                                     Vote Now
                                                 </Button>
-                                            </Card.Content> */}
+                                            </Card.Content>}
                                         </Card>
                                     </Form.Field>
                                 ) : ''

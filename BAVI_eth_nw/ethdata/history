@@ -79,3 +79,38 @@ miner.start()
 miner.stop()
 admin.addPeer("enode://6ecf8deafb0259d92f24a7100e6305b65ea078c7951651c5ffce0de7662aa130584e26e57b604ac5c1bee282388bb66b4a9f6eab28c6ff9f7596650f6e44794a@127.0.0.1:30306?discport=0")
 miner.stop()
+admin.peerCount
+admin.peers
+admin.addPeer("enode://6ecf8deafb0259d92f24a7100e6305b65ea078c7951651c5ffce0de7662aa130584e26e57b604ac5c1bee282388bb66b4a9f6eab28c6ff9f7596650f6e44794a@127.0.0.1:30306?discport=0")
+admin.peers
+eth.accounts
+eth.coinbase
+eth.getBalance(eth.accounts[1])
+eth.sendTransaction({from:0x4e635f8347b45c456085da391a0b0e53437f4616, to:0xf57e64c66d8419caffc3beeb7c842721c1da9f80, value:"50000"})
+eth.sendTransaction({from:"0x4e635f8347b45c456085da391a0b0e53437f4616", to:"0xf57e64c66d8419caffc3beeb7c842721c1da9f80", value:"50000"})
+eth.getBalance(eth.accounts[1])
+eth.getBalance(eth.accounts[0])
+eth.getBalance(eth.accounts[1])
+eth.sendTransaction({from:"0x4e635f8347b45c456085da391a0b0e53437f4616", to:"0xf57e64c66d8419caffc3beeb7c842721c1da9f80", value:"500000000000000"})
+eth.accounts
+eth.unlockAccount(eth.accounts[1])
+eth.accounts
+eth.coinbase
+eth.accounts
+eth.getBalance(eth.accounts[2])
+eth.getBalance(eth.accounts[3])
+eth.accounts
+eth.coinbase
+eth.accounts
+eth.getBalance(eth.accounts[12])
+eth.sendTransaction({from:"0x4e635f8347b45c456085da391a0b0e53437f4616", to:eth.accounts[12], value:"50000000000"})
+eth.sendTransaction({from:"0x4e635f8347b45c456085da391a0b0e53437f4616", to:eth.accounts[12], value:"999999999999999"})
+eth.getBalance(eth.accounts[12])
+eth.accounts
+eth.coinbase
+eth.getBalance(eth.accounts[12])
+eth.getBalance(eth.accounts[15])
+eth.accounts
+admin.addPeer("enode://6ecf8deafb0259d92f24a7100e6305b65ea078c7951651c5ffce0de7662aa130584e26e57b604ac5c1bee282388bb66b4a9f6eab28c6ff9f7596650f6e44794a@127.0.0.1:30306?discport=0")
+admin.peers
+eth.accounts

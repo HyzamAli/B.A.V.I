@@ -3,6 +3,8 @@ import { Card, Grid, Button } from 'semantic-ui-react';
 import { Link, Router } from '../../routes';
 import Layout from '../../components/Layout';
 import Campaign from '../../ethereum/campaign';
+import Head from 'next/head';
+import Header from '../../components/Header';
 
 class CampaignShow extends Component {
     static async getInitialProps(props) {
@@ -11,7 +13,7 @@ class CampaignShow extends Component {
         const summary = await campaign.methods.getSummary().call();
         const complete = await campaign.methods.complete().call();
 
-        console.log(summary, props.query.address);
+        console.log('summary',summary, props.query.address);
 
         return { 
             address: props.query.address,
@@ -77,7 +79,8 @@ class CampaignShow extends Component {
         console.log(this.props.address);
         return (
             <Layout>
-                <h3>Campaign Show</h3>
+		<Header />
+                <h3>Campaign Dashboard</h3>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column width={10}>
@@ -93,13 +96,13 @@ class CampaignShow extends Component {
                             		<Button primary style={{ marginTop: '20px' }}>Declare Result</Button>
 				    </a>
 			    </Link>
-                            /*{this.props.complete ? '' : (
+                            {/*{this.props.complete ? '' : (
                                 <Link route={`/campaigns/${this.props.address}/results`}>
                                     <a>
                             		<Button primary style={{ marginTop: '20px' }}>Declare Result</Button>
 				    </a>
 				</Link>
-			    )}*/
+			    )}*/}
                         </Grid.Column>
                         <Grid.Column width={6}>
                         <Card fluid>

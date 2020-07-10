@@ -8,7 +8,7 @@ router.post('/', function(req, res, next) {
   const getUserQuery = {voterID : number};
 
   var MongoClient = require('mongodb').MongoClient;
-  var url = "mongodb://localhost:27018/";
+  var url = "mongodb://localhost:27017/";
   var dbConn = MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("BAVI");
@@ -23,7 +23,10 @@ router.post('/', function(req, res, next) {
 
       if(password === result[0].password) {
         console.log('Correct password');
-        res.render('userHome', {title: 'Registration'});
+        //res.render('userHome', {title: 'User Home'});
+	var str = encodeURIComponent(number);
+	console.log('str:',str)
+	res.redirect('http://localhost:3000/campaigns/0xc52c546bfd807B7806AA7036F756dA26EA1C8C37/vote'+'?'+str);
       }else {
         console.log('Wrong Password');
       }

@@ -4,6 +4,8 @@ import factory from '../ethereum/factory';
 import Layout from '../components/Layout';
 import { Link } from '../routes';
 import Campaign from '../ethereum/campaign';
+import Head from 'next/head';
+import Header from '../components/Header2';
 
 class CampaignIndex extends Component {
     static async getInitialProps() {
@@ -44,7 +46,8 @@ class CampaignIndex extends Component {
     render() {
         return (
             <Layout>
-                <h3>Campaigns</h3>
+		<Header />
+                <h3>Live Campaigns</h3>
                 <Link route="/campaigns/new">
                     <a>
                         <Button 

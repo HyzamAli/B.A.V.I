@@ -3,7 +3,7 @@ var campaignFactory = require("./build/CampaignFactory.json");
 //const address = require('./deploy.js');
 
 
-const address = '0x44D8d4C1fF1D7601b54937d9332057C1167De8B6';
+const address = '0xCa87A2D6a41Ae583E6De758fa225008707d1aBA2';
 
 
 

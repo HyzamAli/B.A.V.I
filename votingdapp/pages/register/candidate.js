@@ -4,7 +4,8 @@ import Layout from '../../components/Layout';
 import { Router } from '../../routes';
 import web3 from '../../ethereum/web3';     //web3 provider
 import Campaign from '../../ethereum/campaign';   //campaign object
-
+import Head from 'next/head';
+import Header from '../../components/Header2';
 class RegisterCandidate extends Component {
 
     state = {
@@ -45,6 +46,7 @@ class RegisterCandidate extends Component {
     render() {
         return (
             <Layout>
+		<Header />
                 <div style={{ justifyContent: 'center' }}>
                     <Grid centered>
                         <Grid.Column width={5}>

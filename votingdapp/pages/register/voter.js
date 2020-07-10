@@ -4,6 +4,8 @@ import Layout from '../../components/Layout';
 import { Router } from '../../routes';
 import web3 from '../../ethereum/web3';
 import Campaign from '../../ethereum/campaign';
+import Head from 'next/head';
+import Header from '../../components/Header2';
 
 class RegisterVoter extends Component {
 
@@ -45,6 +47,7 @@ class RegisterVoter extends Component {
     render() {
         return (
             <Layout>
+		<Header />
                 <div style={{ justifyContent: 'center' }}>
                     <Grid centered>
                         <Grid.Column width={5}>
